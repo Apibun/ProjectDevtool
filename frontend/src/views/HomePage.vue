@@ -3,7 +3,7 @@
     <div class="flexcontainer" style="margin-top: 100px">
       <h1 class="text-h3" style="color: #63b224">Water Hyacinth Problem</h1>
     </div>
-    <div class="flexcontainer">
+    <div class="flexcontainer" style="z-index: -1">
       <img src="../assets/Waterhyacinth.png" />
     </div>
     <div class="flexcontainer" style="padding-top: 40px">

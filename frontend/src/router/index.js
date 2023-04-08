@@ -1,5 +1,5 @@
 // import VueRouter from "vue-router";
-import { createRouter, createWebHashHistory  } from "vue-router";
+import { createRouter, createWebHashHistory } from "vue-router";
 
 // Vue.use(VueRouter);
 
