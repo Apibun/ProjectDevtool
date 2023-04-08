@@ -1,6 +1,6 @@
 import { createApp } from "vue";
 import App from "./App.vue";
-
+import router from "./router/index";
 
 import "./assets/main.css";
 // Vuetify
@@ -14,4 +14,7 @@ const vuetify = createVuetify({
   directives,
 });
 
-createApp(App).use(vuetify).mount("#app");
+// Access the $router object
+createApp(App).config.globalProperties.$router = router;
+
+createApp(App).use(vuetify).use(router).mount("#app");

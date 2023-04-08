@@ -9,11 +9,11 @@
 
           <v-app-bar-title class="text-h4">WATER.7</v-app-bar-title>
           <ul class="navbar">
-            <li><a href="">Home</a></li>
-            <li><a href="">แจ้งหน่วยงาน</a></li>
-            <li><a href="">โครงการ</a></li>
-            <li><a href="">ผลิตภัณฑ์</a></li>
-            <li><a href="">ข่าวสาร</a></li>
+            <li><router-link to="/">Home</router-link></li>
+            <li><router-link to="/agency">แจ้งหน่วยงาน</router-link></li>
+            <!-- <li><router-link>โครงการ</router-link></li>
+            <li><router-link>ผลิตภัณฑ์</router-link></li>
+            <li><router-link>ข่าวสาร</router-link></li> -->
           </ul>
           <template v-slot:append>
             <img
@@ -35,7 +35,12 @@
   </header>
 </template>
 <script>
-export default {};
+import { RouterLink } from "vue-router"; // Import the router-link component
+export default {
+  components: {
+    RouterLink, // Register the router-link component
+  },
+};
 </script>
 <style scoped>
 .v-toolbar {
