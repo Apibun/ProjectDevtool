@@ -17,6 +17,7 @@
         ทำให้การควบคุมวัชพืชดังกล่าวเป็นไปได้ยาก
       </p>
     </div>
+    <!-- footer -->
     <div
       class="flexcontainer"
       style="padding-top: 40px; background-color: #dbf29d"
