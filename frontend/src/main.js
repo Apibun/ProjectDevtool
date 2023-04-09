@@ -1,20 +1,12 @@
-import { createApp } from "vue";
-import App from "./App.vue";
-import router from "./router/index";
+import Vue from 'vue'
+import App from './App.vue'
+import router from './router/index'
 
-import "./assets/main.css";
-// Vuetify
-import "vuetify/styles";
-import { createVuetify } from "vuetify";
-import * as components from "vuetify/components";
-import * as directives from "vuetify/directives";
+import 'bulma/css/bulma.css'
 
-const vuetify = createVuetify({
-  components,
-  directives,
-});
+Vue.config.productionTip = false
 
-// Access the $router object
-createApp(App).config.globalProperties.$router = router;
-
-createApp(App).use(vuetify).use(router).mount("#app");
+new Vue({
+  router,
+  render: h => h(App),
+}).$mount('#app')
