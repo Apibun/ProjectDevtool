@@ -24,13 +24,27 @@ const routes = [
         path: '/product',
         name: 'Product',
         component: () => import('../views/Product.vue') // set home as path '/'
-    }
-    ,
+    },
     {
         path: '/news',
         name: 'News',
         component: () => import('../views/News.vue') // set home as path '/'
     },
+    {
+        path: '/view/project',
+        name: 'View Project',
+        component: () => import('../views/ViewProject.vue') // set home as path '/'
+    },
+    {
+        path: '/view/product',
+        name: 'View Product',
+        component: () => import('../views/ViewProduct.vue') // set home as path '/'
+    },
+    {
+        path: '/view/news',
+        name: 'View News',
+        component: () => import('../views/ViewNews.vue') // set home as path '/'
+    }
     // {
     //     path: '/checkOrder',
     //     name: 'CheckOrder',
