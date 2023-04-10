@@ -114,7 +114,16 @@
           <div class="card" style="background-color: #fffdde">
             <div class="card-image">
               <figure class="image is-4by3">
-                <img :src="item.image" alt="Placeholder image" />
+                <img
+                  :src="item.image"
+                  alt="Placeholder image"
+                  style="
+                    min-width: 200px;
+                    min-height: 200px;
+                    max-width: 350px;
+                    max-height: 300px;
+                  "
+                />
               </figure>
             </div>
             <div class="card-content">
@@ -150,7 +159,18 @@
                     <p class="title is-size-3 has-text-centered">
                       รายละเอียดโครงการ
                     </p>
-                    <img :src="item.image" alt="Placeholder image" />
+                    <div class="has-text-centered">
+                      <img
+                        :src="item.image"
+                        alt="Placeholder image"
+                        style="
+                          min-width: 400px;
+                          min-height: 400px;
+                          max-width: 600px;
+                          max-height: 600px;
+                        "
+                      />
+                    </div>
                     <p class="title is-size-5 has-text-centered mt-5">
                       {{ item.title }}
                     </p>
@@ -159,8 +179,7 @@
                     </div>
                     <p class="title is-size-5">ข้อมูลติดต่อ</p>
                     <p>
-                      สำนักงานเทศบาลตำบลชุมพร 223 หมู่ 10 ตำบลชุมพร อำเภอเมยวดี
-                      จังหวัดร้อยเอ็ด 45250 โทรศัพท์ สำนักปลัด 043-030517
+                      {{ item.contact }}
                     </p>
                   </section>
                 </div>
