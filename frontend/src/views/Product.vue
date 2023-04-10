@@ -42,9 +42,8 @@
     </div>
   </div>
 </template>
-    
-    
-    <script>
+
+<script>
 import products from "../views/project.json";
 export default {
   data() {
