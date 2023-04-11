@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <div class="container mt-6 mb-6">
     <h1 class="is-size-2 has-text-centered has-text-weight-bold">ผลิตภัณฑ์</h1>
