@@ -26,4 +26,14 @@ router.post('/products/create', async(req, res,next) => {
   });
 })
 
+router.get('/products', async(req, res) => {
+    const id = parseInt(req.params.id);
+    const client = new MongoClient(uri);
+    await client.connect();
+    const users = await client.db('DevTool').collection('product').find({}).toArray();
+    await client.close();
+    res.status(200).send(users);
+    console.log(users[0].id)
+  })
+
 exports.router = router;

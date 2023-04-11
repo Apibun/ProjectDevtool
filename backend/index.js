@@ -8,7 +8,9 @@ app.use(cors())
 app.use(express.json());
 
 const productRouter = require('./router/product')
+const newsRouter = require('./router/news')
 app.use(productRouter.router)
+app.use(newsRouter.router)
 
   
 app.get('/', (req, res, next) => {

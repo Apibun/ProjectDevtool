@@ -46,19 +46,27 @@
       
       
       <script>
-  import products from "../views/project.json";
+import axios from "axios";
   export default {
     data() {
       return {
         role: "customer",
-        products: products,
+        news: products,
         projectSearch: "",
       };
     },
     methods: {},
     created() {
-      this.products = JSON.parse(localStorage.getItem("ManagePD"));
-    },
+    axios
+      .get("http://localhost:3000/news")
+      .then((response) => {
+        this.products = response.data;
+        console.log(this.products);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  },
     computed: {
       // ProjectSearch() {
       //   return this.products.filter((data) =>
