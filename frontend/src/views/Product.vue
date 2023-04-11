@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <div class="container mt-6 mb-6">
     <h1 class="is-size-2 has-text-centered has-text-weight-bold">ผลิตภัณฑ์</h1>
@@ -20,9 +21,9 @@
               </figure>
 
               <div class="hero-body">
-                <p class="title is-size-4">{{ product.title }}</p>
+                <p class="title is-size-4">{{ product.fname }}</p>
                 <p class="content">
-                  {{ product.detail.substring(0, 120) + "..." }}
+                  {{ product.lname.substring(0, 120) + "..." }}
                 </p>
                 <div class="">
                   <button
@@ -44,18 +45,26 @@
 </template>
 
 <script>
-import products from "../views/project.json";
+import axios from "axios";
 export default {
   data() {
     return {
       role: "customer",
-      products: products,
+      products: "",
       projectSearch: "",
     };
   },
   methods: {},
   created() {
-    this.products = JSON.parse(localStorage.getItem("ManagePD"));
+    axios
+      .get("http://localhost:3000/products")
+      .then((response) => {
+        this.products = response.data;
+        console.log(this.products);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   },
   computed: {
     // ProjectSearch() {
