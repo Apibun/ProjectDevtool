@@ -31,7 +31,7 @@ const routes = [
         component: () => import('../views/News.vue') // set home as path '/'
     },
     {
-        path: '/view/project',
+        path: '/project/:id',
         name: 'View Project',
         component: () => import('../views/ViewProject.vue') // set home as path '/'
     },
@@ -41,7 +41,7 @@ const routes = [
         component: () => import('../views/ViewProduct.vue') // set home as path '/'
     },
     {
-        path: '/view/news',
+        path: '/news/:id',
         name: 'View News',
         component: () => import('../views/ViewNews.vue') // set home as path '/'
     }

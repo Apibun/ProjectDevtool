@@ -31,7 +31,16 @@ router.get('/news', async(req, res) => {
     const get_news = await client.db('DevTool').collection('news').find({}).toArray();
     await client.close();
     res.status(200).send(get_news);
-    console.log(get_news[0].id)
   })
+
+  router.get('/news/:id', async(req, res) => {
+    const id = parseInt(req.params.id);
+    const client = new MongoClient(uri);
+    await client.connect();
+    const get_news = await client.db('DevTool').collection('news').findOne({ "id": id });
+    await client.close();
+    res.status(200).send(get_news);
+  })
+
 
 exports.router = router;
