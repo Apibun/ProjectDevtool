@@ -22,36 +22,39 @@
             <div
               id="card_product"
               class="column is-one-quarter"
-              v-for="(value, index) in ProjectSearch"
-              :key="index"
+              v-for="project in projects"
+              :key="project.id"
             >
               <div class="box" style="background-color: #fffdde">
                 <div class="card-image">
                   <figure class="image is-1by1">
-                    <img :src="value.image" alt="Placeholder image" />
+                    <img :src="project.project_image " alt="Placeholder image" />
                   </figure>
                 </div>
                 <div class="card-content">
                   <div class="media">
                     <div class="media-content">
-                      <span id="title" class="title is-5">{{ value.title }}</span>
+                      <span id="title" class="title is-5">{{ project.project_title }}</span>
                       <br /><br />
                       <span
                         id="detail"
                         class="detail is-5"
-                        v-if="value.detail.length > 200"
-                        >{{ value.detail.substring(0, 197) + "..." }}</span
+                        v-if="project.project_detail.length > 200"
+                        >{{ project.project_detail.substring(0, 197) + "..." }}</span
                       >
-                      <span id="detail" class="detail is-5" v-else>{{
-                        value.detail
-                      }}</span>
+                      <span
+                        id="detail"
+                        class="detail is-5"
+                        v-else
+                        >{{ project.project_detail}}</span
+                      >
                     </div>
                   </div>
                 </div>
 
                 <!-- info -->
                 <div class="has-text-centered">
-                  <button class="button has-text-weight-bold" style="background-color: #BCE29E; border: none;"><router-link to="/view/project" class="has-text-black">Read More.</router-link></button>
+                  <button class="button has-text-weight-bold" style="background-color: #BCE29E; border: none;"><router-link :to="/project/ + project.id" class="has-text-black">Read More.</router-link></button>
                 </div>
               </div>
             </div>
@@ -64,24 +67,30 @@
   
   
   <script>
-import products from "../views/project.json";
+import axios from "axios";
 export default {
   data() {
     return {
       role: "customer",
-      products: products,
+      projects: "",
       projectSearch: "",
     };
   },
-  methods: {
-  },
   created() {
-    this.products = JSON.parse(localStorage.getItem("ManagePD"));
+    axios
+      .get("http://localhost:3000/project")
+      .then((response) => {
+        this.projects = response.data;
+        console.log(this.projects);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   },
   computed: {
     ProjectSearch() {
-      return this.products.filter((data) =>
-        data.title.toLowerCase().includes(this.projectSearch.toLowerCase())
+      return this.projects.filter((data2) =>
+        data2.project_title.toLowerCase().includes(this.projectSearch.toLowerCase())
       );
     },
   },
