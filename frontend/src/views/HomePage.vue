@@ -5,7 +5,7 @@
       <section class="hero is-small has-text-centered">
         <div class="p-6">
             <p class="title is-size-1" style="color: #63b224;">
-              Water Hyacinth Ploblem. ?
+              Water Hyacinth Problem. ?
             </p>
             <img src="../assets/Waterhyacinth.png" alt="Waterhyacinth" style="width: 30%;"/>
             <p class="subtitle mt-3">

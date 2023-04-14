@@ -51,6 +51,16 @@
   </div>
 </template>
 
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Anuphan');
+  body,button{
+    font-family: 'Anuphan';
+    background-color: #f9f7f0;
+  }
+
+</style>
+
 <script>
 export default {
   data() {
