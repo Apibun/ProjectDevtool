@@ -1,8 +1,7 @@
 <template>
+  <div style="background-color: #f9f7f0">
     <div class="container is-widescreen" >
         <div >
-
-        
       <section class="hero" >
         <div class="hero-body">
           <p class="title">{{ projects.project_title }}</p>
@@ -34,6 +33,7 @@
       </section>
     </div>
     </div>
+  </div>
   </template>
   
   <script>

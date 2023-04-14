@@ -1,6 +1,6 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
-    <div class="container mt-6 mb-6">
+    <div class="container p-3 mt-6">
         <h1 class="is-size-2 has-text-centered has-text-weight-bold">ข่าวสาร</h1>
       <div v-for="news in newss" :key="news.id">
         <section class="card mt-5" id="app">
@@ -22,9 +22,12 @@
   
                 <div class="hero-body">
                   <p class="title is-size-4">{{ news.new_title }}</p>
-                  <p class="content">
-                    {{ news.new_detail}}
+                  <p class="content" v-if="news.new_detail.length > 120">
+                   {{  news.new_detail.substring(0, 110) + "..." }}
                   </p>
+                  <p class="content" v-else>{{
+                      news.new_detail
+                    }}</p>
                   <div class="">
                     <button
                       class="button has-text-weight-bold"
