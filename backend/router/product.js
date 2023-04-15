@@ -4,7 +4,7 @@ const express = require('express')
 router = express.Router();
 
 const { MongoClient } = require("mongodb");
-const uri = "mongodb://localhost:27017";
+const uri = "mongodb://127.0.0.1:27017";
 
 router.post('/products/create', async(req, res,next) => {
   const user = req.body;
@@ -33,7 +33,6 @@ router.get('/products', async(req, res) => {
     const users = await client.db('DevTool').collection('product').find({}).toArray();
     await client.close();
     res.status(200).send(users);
-    console.log(users[0].id)
   })
 
 exports.router = router;

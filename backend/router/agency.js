@@ -28,8 +28,8 @@ router.get("/agency", async (req, res) => {
 });
 
 router.post("/agency", upload.single("image"), async (req, res) => {
-  console.log(req.file);
-  console.log(req.file.path);
+  console.log({ reqfile: req.file });
+  console.log({ reqfilepath: req.file.path });
   const agency = req.body;
   console.log(agency);
   const client = new MongoClient(uri);
@@ -41,6 +41,7 @@ router.post("/agency", upload.single("image"), async (req, res) => {
       image: req.file.path.substring(6),
       heading: agency.heading,
       inform: agency.inform,
+      agency_id: agency.agency_id,
     });
   await client.close();
   res.status(200).json({ message: "Upload Image Successfully" });
