@@ -16,5 +16,5 @@ COPY . .
 # Expose the port that the backend will run on
 EXPOSE 3000
 
-# Start the backend application
-CMD ["node", "index.js"]
+# Start the backend application with "npm run serve" command
+CMD ["npm", "run", "serve"]
