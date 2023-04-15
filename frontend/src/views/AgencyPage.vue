@@ -20,16 +20,19 @@
       <template v-if="SearchQuery === ''">
         <div class="column is-3" v-for="item in carditems" :key="item.id">
           <div class="card" style="background-color: #fffdde">
-            <div class="card-image">
-              <figure class="image is-4by3">
+            <div class="card-image pt-4">
+              <figure
+                class="image"
+                style="display: flex; justify-content: center"
+              >
                 <img
                   :src="item.image"
                   alt="Placeholder image"
                   style="
                     min-width: 200px;
                     min-height: 200px;
-                    max-width: 200px;
-                    max-height: 200px;
+                    max-width: 250px;
+                    max-height: 250px;
                   "
                 />
               </figure>
@@ -69,16 +72,19 @@
       <template v-else>
         <div class="column is-3" v-for="item in filteredItems" :key="item.id">
           <div class="card" style="background-color: #fffdde">
-            <div class="card-image">
-              <figure class="image is-4by3">
+            <div class="card-image pt-4">
+              <figure
+                class="image"
+                style="display: flex; justify-content: center"
+              >
                 <img
                   :src="item.image"
                   alt="Placeholder image"
                   style="
                     min-width: 200px;
                     min-height: 200px;
-                    max-width: 200px;
-                    max-height: 200px;
+                    max-width: 250px;
+                    max-height: 250px;
                   "
                 />
               </figure>
