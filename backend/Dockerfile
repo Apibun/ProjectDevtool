@@ -1,18 +1,20 @@
 FROM node
 # COPY . /usr/share/
 # WORKDIR /usr/share
-# Set the working directory
+# Set the working directory in the container
 WORKDIR /app
 
-# Copy package.json and package-lock.json to the working directory
+# Copy package.json and package-lock.json to the container
 COPY package*.json ./
 
 # Install dependencies
-RUN npm install
+RUN npm ci
 
-# Copy the rest of the application code to the working directory
+# Copy the entire backend code to the container
 COPY . .
 
-# Expose the desired port for the backend application
+# Expose the port that the backend will run on
 EXPOSE 3000
+
+# Start the backend application
 CMD ["node", "index.js"]
