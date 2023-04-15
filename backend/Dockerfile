@@ -15,4 +15,4 @@ COPY . .
 
 # Expose the desired port for the backend application
 EXPOSE 3000
-CMD ["node", "serve"]
+CMD ["node", "index.js"]
