@@ -21,7 +21,7 @@ services:
     ports: 
       - 3000:3000
     depends_on:
-      - db
+      - mongodb
     networks:
       - back-tier
 
@@ -34,17 +34,7 @@ services:
     environment:
       - MONGO_INITDB_DATABASE=Devtool
     volumes:
-      - ./database-data:/data/db
-            
-  mongo-express:
-    container_name: mongo-express
-    image: mongo-express:latest
-    restart: always
-    ports:
-      - 8081:8081
-    environment:
-      ME_CONFIG_MONGODB_SERVER: mongodb
-            
+      - ./database-data:/data/db            
 
 networks:
   front-tier:
