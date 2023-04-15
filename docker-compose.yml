@@ -5,7 +5,7 @@
 services:
   frontend:
     build: ./frontend
-    image: apibun/fe:latest
+    image: apibun/frontend:latest
     ports: 
       - 8081:80
     links:
@@ -17,7 +17,7 @@ services:
 
   backend:
     build: ./backend
-    image: apibun/be:latest
+    image: apibun/backend:latest
     ports: 
       - 3000:3000
     networks:
