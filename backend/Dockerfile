@@ -1,20 +1,17 @@
-FROM node
-# COPY . /usr/share/
-# WORKDIR /usr/share
-# Set the working directory in the container
-WORKDIR /app
+FROM node:18-alpine as base
 
-# Copy package.json and package-lock.json to the container
-COPY package*.json ./
-
-# Install dependencies
-RUN npm ci
-
-# Copy the entire backend code to the container
-COPY . .
-
-# Expose the port that the backend will run on
+WORKDIR /src
+COPY package*.json /
 EXPOSE 3000
 
-# Start the backend application with "nodemon" using "npm run serve" command
-CMD ["nodemon", "index.js"]
+FROM base as production
+ENV NODE_ENV=production
+RUN npm ci
+COPY . /
+CMD ["node", "bin/www"]
+
+FROM base as dev
+ENV NODE_ENV=development
+RUN npm install -g nodemon && npm install
+COPY . /
+CMD ["nodemon", "bin/www"]
