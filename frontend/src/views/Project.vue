@@ -132,7 +132,7 @@ data() {
 },
 created() {
   axios
-    .get("http://localhost:3000/project")
+    .get(`http://${window.location.hostname}:3000/project`)
     .then((response) => {
       this.projects = response.data;
       //console.log(this.projects);

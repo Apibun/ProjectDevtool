@@ -316,7 +316,7 @@ export default {
 
   created() {
     axios
-      .get("http://localhost:3000/agency")
+      .get(`http://${window.location.hostname}:3000/agency`)
       .then((response) => {
         this.carditems = response.data;
         console.log(this.carditems);
@@ -410,7 +410,7 @@ export default {
       formData.append("inform", this.inform);
       formData.append("agency_id", this.selectedItem.id);
       axios
-        .post("http://localhost:3000/agency", formData)
+        .post(`http://${window.location.hostname}:3000/agency`, formData)
         .then((response) => {
           console.log(response);
         })

@@ -50,7 +50,7 @@ export default {
   methods: {},
   created() {
     axios
-      .get("http://localhost:3000/products")
+      .get(`http://${window.location.hostname}:3000/products`)
       .then((response) => {
         this.products = response.data;
         console.log(this.products);

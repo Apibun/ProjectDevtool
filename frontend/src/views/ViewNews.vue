@@ -1,6 +1,6 @@
 <template>
   <div class="container is-widescreen">
-    <div >
+    <div>
       <section class="hero">
         <div class="hero-body">
           <p class="title">{{ newss.new_title }}</p>
@@ -46,9 +46,11 @@ export default {
   methods: {},
   created() {
     axios
-      .get("http://localhost:3000/news/"+ this.$route.params.id)
+      .get(
+        `http://${window.location.hostname}:3000/news/` + this.$route.params.id
+      )
       .then((response) => {
-        console.log(response)
+        console.log(response);
         this.newss = response.data;
       })
       .catch((err) => {
@@ -56,7 +58,6 @@ export default {
       });
   },
 };
-
 </script>
 
 <style scoped></style>

@@ -61,7 +61,7 @@ export default {
   methods: {},
   created() {
   axios
-    .get("http://localhost:3000/news")
+    .get(`http://${window.location.hostname}:3000/news`)
     .then((response) => {
       this.newss = response.data;
       console.log(this.newss);
