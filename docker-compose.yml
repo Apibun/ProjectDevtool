@@ -1,0 +1,49 @@
+# version is now using "compose spec"
+# v2 and v3 are now combined!
+# docker-compose v1.27+ required
+
+services:
+  frontend:
+    build: ./frontend
+    image: apibun/fe:latest
+    ports: 
+      - 8081:80
+    links:
+      - be
+     
+    networks:
+      - front-tier
+    
+
+  backend:
+    build: ./backend
+    image: apibun/be:latest
+    ports: 
+      - 3000:3000
+    networks:
+      - back-tier
+
+  mongodb:
+    container_name: mongodb
+    image: mongo:latest
+    restart: always
+    ports:
+      - 27017:27017
+    environment:
+      - MONGO_INITDB_DATABASE=Devtool
+    volumes:
+      - ./database-data:/data/db
+            
+  mongo-express:
+    container_name: mongo-express
+    image: mongo-express:latest
+    restart: always
+    ports:
+      - 8081:8081
+    environment:
+      ME_CONFIG_MONGODB_SERVER: mongodb
+            
+
+networks:
+  front-tier:
+  back-tier:
