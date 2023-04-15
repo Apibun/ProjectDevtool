@@ -28,8 +28,8 @@
                   style="
                     min-width: 200px;
                     min-height: 200px;
-                    max-width: 400px;
-                    max-height: 300px;
+                    max-width: 200px;
+                    max-height: 200px;
                   "
                 />
               </figure>
@@ -77,8 +77,8 @@
                   style="
                     min-width: 200px;
                     min-height: 200px;
-                    max-width: 400px;
-                    max-height: 300px;
+                    max-width: 200px;
+                    max-height: 200px;
                   "
                 />
               </figure>
