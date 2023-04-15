@@ -20,6 +20,8 @@ services:
     image: apibun/backend:latest
     ports: 
       - 3000:3000
+    depends_on:
+      - db
     networks:
       - back-tier
 
