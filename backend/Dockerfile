@@ -1,17 +1,9 @@
-FROM node:18-alpine as base
+FROM node:18-alpine
 
-WORKDIR /src
+WORKDIR /app
 COPY package*.json /
+RUN npm i
+COPY . .
 EXPOSE 3000
 
-FROM base as production
-ENV NODE_ENV=production
-RUN npm ci
-COPY . /
-CMD ["node", "bin/www"]
-
-FROM base as dev
-ENV NODE_ENV=development
-RUN npm install -g nodemon && npm install
-COPY . /
-CMD ["nodemon", "bin/www"]
+CMD ["npm", "start"]
