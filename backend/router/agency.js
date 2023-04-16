@@ -2,7 +2,9 @@ const express = require("express");
 router = express.Router();
 const multer = require("multer");
 const { MongoClient } = require("mongodb");
-const uri = "mongodb://54.82.35.69:27017";
+const os = require('os');
+const hostname = os.hostname();
+const uri = `mongodb://${hostname}/:27017`;
 
 // Set up Multer for handling file uploads
 const storage = multer.diskStorage({

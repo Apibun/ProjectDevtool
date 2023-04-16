@@ -1,10 +1,10 @@
 
 const express = require('express')
-
 router = express.Router();
-
 const { MongoClient } = require("mongodb");
-const uri = "mongodb://54.82.35.69:27017";
+const os = require('os');
+const hostname = os.hostname();
+const uri = `mongodb://${hostname}/:27017`;
 
 
 router.get('/project', async(req, res) => {
