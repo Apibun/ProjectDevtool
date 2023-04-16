@@ -405,6 +405,7 @@ export default {
         this.error.image = "กรุณาเลือกไฟล์รูปภาพ";
         return;
       }
+      this.error.image = "";
       this.validateHeading();
       this.validateInform();
       console.log(item);
