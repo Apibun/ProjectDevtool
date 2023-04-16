@@ -361,6 +361,7 @@ export default {
       this.showModalReport = false;
       this.error.heading = "";
       this.error.inform = "";
+      this.error.image = "";
       this.file = null;
       this.heading = "";
       this.inform = "";
