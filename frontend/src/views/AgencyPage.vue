@@ -403,7 +403,7 @@ export default {
     openModalConfirm(item) {
       if (!this.file) {
         this.error.image = "กรุณาเลือกไฟล์รูปภาพ";
-        alert("กรุณาเลือกรูปภาพ")
+        alert("กรุณาเลือกรูปภาพ");
         return;
       }
       this.error.image = "";
