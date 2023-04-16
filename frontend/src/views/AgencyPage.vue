@@ -403,21 +403,26 @@ export default {
     openModalConfirm(item) {
       if (!this.file) {
         this.error.image = "กรุณาเลือกไฟล์รูปภาพ";
+        alert("กรุณาเลือกรูปภาพ")
         return;
       }
       this.error.image = "";
       this.validateHeading();
       this.validateInform();
+      if (this.heading === "") {
+        alert("กรุณากรอกหัวเรื่อง");
+        return;
+      }
+      if (this.inform === "") {
+        alert("กรุณากรอกแจ้งเหตุ");
+        return;
+      }
       console.log(item);
       this.selectedItem = item;
       this.showModalConfirm = true;
     },
 
     confirmReport() {
-      // if (!this.file) {
-      //   this.error.image = "กรุณาเลือกไฟล์รูปภาพ";
-      //   return;
-      // }
       const formData = new FormData();
       formData.append("image", this.file, this.file.name);
       formData.append("heading", this.heading);
