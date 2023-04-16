@@ -29,7 +29,7 @@
                 class="button ml-6 mb-5"
                 style="background-color: #ff9494; border: none"
               >
-                <a class="has-text-black" href="/project">To Back</a>
+                <router-link class="has-text-black" to="/project">To Back</router-link>
               </button>
             </div>
           </div>
