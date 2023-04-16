@@ -202,7 +202,7 @@
                 >
                   <span class="file-label is-size-5">choose image</span>
                 </span>
-                <span class="has-text-danger">{{ error.inform }}</span>
+                <span class="has-text-danger">{{ error.image }}</span>
               </label>
             </div>
             <p class="title is-size-5 mb-2">หัวเรื่อง :</p>
@@ -400,16 +400,22 @@ export default {
     },
 
     openModalConfirm(item) {
+      if (!this.file) {
+        this.error.image = "กรุณาเลือกไฟล์รูปภาพ";
+        return;
+      }
+      this.validateHeading();
+      this.validateInform();
       console.log(item);
       this.selectedItem = item;
       this.showModalConfirm = true;
     },
 
     confirmReport() {
-      if (!this.file) {
-        this.error.image = "กรุณาเลือกไฟล์รูปภาพ";
-        return;
-      }
+      // if (!this.file) {
+      //   this.error.image = "กรุณาเลือกไฟล์รูปภาพ";
+      //   return;
+      // }
       const formData = new FormData();
       formData.append("image", this.file, this.file.name);
       formData.append("heading", this.heading);
