@@ -2,7 +2,7 @@
 const express = require('express')
 router = express.Router();
 const { MongoClient } = require("mongodb");
-const uri = `mongodb://${window.location.hostname}/:27017`;
+const uri = `mongodb://${window.location.hostname}:27017`;
 
 router.post('/news/create', async(req, res,next) => {
   const newss = req.body;
