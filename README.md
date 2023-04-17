@@ -2,8 +2,9 @@
 # Team41 : การพัฒนาเว็บไซต์จัดการการแก้ปัญหาผักตบชวา Water.7(Water Hyacinth Problem.)
 
 รายวิชา : Software Development Tools and Environments ภาคการศึกษา 2/2565
+
 จัดทำโดย 1. นายพีรพัฒน์ กิจพร้อมผล รหัสนักศึกษา 63070125
-        2. นายอภิบุญ สมศรี รหัสนักศึกษา 63070184
+2. นายอภิบุญ สมศรี รหัสนักศึกษา 63070184
 
 
 # VDO-Demo : Water.7 (Water Hyacinth Problem.)
